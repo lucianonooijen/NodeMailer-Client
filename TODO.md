@@ -3,6 +3,7 @@
 * Add Handlebars support
 * Ignore node_modules in esdoc config
 * Create server script
+* Add badges from Coding Standards
 * Create MJML rendering
 * Add support for TS(?)
 * Create REST API for sending emails

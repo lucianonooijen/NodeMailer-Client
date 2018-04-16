@@ -1,0 +1,10 @@
+{
+  "name": "nodemailer-client",
+  "version": "1.0.0",
+  "description": "NodeMailer implementation for client and server-side",
+  "main": "app.js",
+  "repository": "https://github.com/lucianonooijen/NodeMailer-Client.git",
+  "author": "Luciano Nooijen <lucianonooijen@gmail.com>",
+  "license": "GPL-3.0",
+  "private": false
+}

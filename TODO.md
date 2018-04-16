@@ -9,6 +9,6 @@
 * Add CI/CD integration (CircleCI/Travis)
 * Create production scripts
 * Security
-* Write documentation
+* Write documentation and create documentation Github pages site
 * Write test
 

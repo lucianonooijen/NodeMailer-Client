@@ -2,19 +2,20 @@
   "name": "nodemailer-client",
   "version": "1.0.0",
   "description": "NodeMailer implementation for client and server-side",
-  "main": "app.js",
+  "main": "server.js",
   "repository": "https://github.com/lucianonooijen/NodeMailer-Client.git",
   "author": "Luciano Nooijen <lucianonooijen@gmail.com>",
   "license": "GPL-3.0",
   "private": false,
   "scripts": {
-    "start": "node app",
+    "start": "node server.js",
     "dev": "parcel client/index.html",
     "build": "parcel build client/index.html --public-url ./",
     "esdoc": "./node_modules/.bin/esdoc && open ./docs/index.html"
   },
   "dependencies": {
     "express": "^4.16.2",
+    "morgan": "^1.9.0",
     "nodemailer": "^4.6.4"
   },
   "devDependencies": {

@@ -1,0 +1,15 @@
+@import 'base/base';
+@import 'layout/layout';
+@import 'components/components';
+@import 'pages/pages';
+@import 'vendor/vendor';
+@import 'shame';
+
+body {
+  background-color: #ddd;
+}
+
+.mainfooter {
+  padding: 20px 0;
+  background-color: #eee;
+}

@@ -1,4 +1,6 @@
 const express = require('express');
+const mailer = require('nodemailer');
+
 const router = express.Router();
 
 router.use('/', (req, res) => {

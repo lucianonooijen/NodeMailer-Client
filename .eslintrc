@@ -2,10 +2,9 @@
     "extends": "airbnb",
     "env": {
         "es6": true
-    }
+    },
     "parser": "babel-eslint",
     "plugins": [
-        "react",
         "prettier"
     ],
     "rules": {

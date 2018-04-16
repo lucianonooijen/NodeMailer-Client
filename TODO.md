@@ -1,7 +1,7 @@
-# TO DO:
+# TO DO
 
-* Create list with all dependencies (Express, Parcel, Nodemailer, ESDoc)
-* Add files from Coding Standards repo
+* Add Handlebars support
+* Ignore node_modules in esdoc config
 * Create server script
 * Create MJML rendering
 * Add support for TS(?)
@@ -12,4 +12,3 @@
 * Security
 * Write documentation and create documentation Github pages site
 * Write test
-

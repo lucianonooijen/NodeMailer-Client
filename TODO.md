@@ -1,5 +1,6 @@
 # TO DO:
 
+* Create list with all dependencies (Express, Parcel, Nodemailer, ESDoc)
 * Add files from Coding Standards repo
 * Create server script
 * Create MJML rendering

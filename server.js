@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Later on, write the access logs to a separate file and only console.log non 200 codes
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 
 // View engine
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -27,9 +27,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 // Set static path
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Set route files
+app.use('/api/mjml', require('./routes/api/mjml'));
+app.use('/api/mailer', require('./routes/api/mailer'));
+
 app.get('/', (req, res) => {
     res.send('Oops, this service does not support get requests (yet).');
 });
 
-app.listen(port, () => console(`Server listening on port ${port}`));
-
+app.listen(port, () => console.log(`Server listening on port ${port}`));

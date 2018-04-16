@@ -1,6 +1,5 @@
 # TO DO
 
-* Ignore node_modules in esdoc config
 * Add badges from Coding Standards
 * Create MJML rendering
 * Create REST API for sending emails

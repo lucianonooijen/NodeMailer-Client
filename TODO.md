@@ -1,5 +1,6 @@
 # TO DO
 
+* Add 'coming soon' hbs file on GET '/'
 * Add badges from Coding Standards
 * Create MJML rendering
 * Create REST API for sending emails

@@ -32,7 +32,7 @@ app.use('/api/mjml', require('./routes/api/mjml'));
 app.use('/api/mailer', require('./routes/api/mailer'));
 
 app.get('/', (req, res) => {
-    res.send('Oops, this service does not support get requests (yet).');
+    res.render('index');
 });
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));

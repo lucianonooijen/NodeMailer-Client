@@ -12,6 +12,7 @@ Type | Route                | Description
 -----|----------------------|------------------
 POST | /api/mjml/render     | Post `{ "mjml": "[your mjml]" }` to this route to generate HTML
 POST | /api/mailer/send     | Route to send your html email. Please refer to the [Email sender payload](#email_sender_payload) section
+GET  | /api/mailer/send     | Sends an example email sender payload
 
 ## Email sender payload
 
@@ -26,15 +27,14 @@ To send an email please use the following payload (json):
         "host": "example.com", // Is the hostname or IP address to connect to
         "secure": true, // If true the connection will use TLS when connecting to server. If false (the default) then TLS is used if server supports the STARTTLS extension. In most cases set this value to true if you are connecting to port 465. For port 587 or 25 keep it false
         "user": "username", // SMTP username
-        "pass": "password", // SMTP password
+        "pass": "password" // SMTP password
     },
-    "message": { // Message fields. For
+    "message": { // Message fields
         "from": "from@example.com", // From email, you can also use `John Doe <john@doe.com>`
         "to": "to@example.com", // To email address(es). See note below for more info
         "cc": "cc@example.com", // Cc email address(es). See note below for more info
         "bcc": "bcc@example.com", // Bcc email address(es). See note below for more info
-        "subject": "Subject", // The email subject
-        "text": "Text" // The plaintext version of the message
+        "subject": "Subject" // The email subject
     },
     "body": "HTML or MJML, as you selected in the 'type' field" // HTML or MJML string
 }
@@ -50,6 +50,10 @@ For the `to`, `cc` and `bcc` fields you can use a single email address, a comma 
 ```
 
 You can mix the normal email notation and the object notation in any way you like.
+
+### Licence
+
+This project is GPL-3.0 licenced.
 
 ### Contributors
 

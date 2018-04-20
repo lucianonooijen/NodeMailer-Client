@@ -12,6 +12,9 @@ const port = process.env.PORT || 3000;
 // Later on, write the access logs to a separate file and only console.log non 200 codes
 app.use(morgan('dev'));
 
+// Disable x-powered-by header
+app.disable('x-powered-by');
+
 // View engine
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');

@@ -3,8 +3,6 @@ const mailer = require('nodemailer');
 
 const router = express.Router();
 
-router.use('/', (req, res) => {
-    res.send('Mailer route working');
-});
+router.post('/send', (req, res) => res.send('working'));
 
 module.exports = router;

@@ -17,7 +17,7 @@ POST | /api/mailer/send     | Route to send your html email. Please refer to the
 
 To send an email please use the following payload (json):
 
-```json
+```js
 {
     "type": "mjml/html", // Whether you are sending ready-to-go HTML or if you want MJML rendered first
     "test": true/false, // Wheter you are sending a test email (send the email to the reply-to address) or if you want to send it to the receipients
@@ -42,7 +42,7 @@ To send an email please use the following payload (json):
 
 For the `to`, `cc` and `bcc` fields you can use a single email address, a comma separated list or an array of email addresses. You can add email addresses to write them just like `john@doe.com`, or you can use the following object notation:
 
-```json
+```js
 {
     "name": "John Doe",
     "address": "john@doe.com"

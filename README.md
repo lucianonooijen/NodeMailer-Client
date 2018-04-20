@@ -11,7 +11,7 @@ As a front-end oriented developer I like to send my client good-looking emails f
 Type | Route                | Description
 -----|----------------------|------------------
 POST | /api/mjml/render     | Post `{ "mjml": "[your mjml]" }` to this route to generate HTML
-POST | /api/mailer/send     | Route to send your html email. Please refer to the [Email sender payload](#email_sender_payload) section
+POST | /api/mailer/send     | Route to send your html email. Please refer to the [Email sender payload](#email-sender-payload) section
 GET  | /api/mailer/send     | Sends an example email sender payload
 
 ## Email sender payload

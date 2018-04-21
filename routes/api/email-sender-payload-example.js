@@ -12,6 +12,7 @@ const payload = {
     },
     message: {
         from: '"John Doe" from@example.com',
+        replyto: "replyto@example.com",
         to: 'to@example.com',
         cc: 'cc1@example.com, cc2@example.com',
         bcc: [
@@ -24,7 +25,7 @@ const payload = {
         ],
         subject: 'Subject',
     },
-    body: "<mjml><mj-body><mj-text>Hello world</mj-text></mj-body></mjml>",
+    content: "<mjml><mj-body><mj-text>Hello world</mj-text></mj-body></mjml>",
 };
 
 module.exports = payload;

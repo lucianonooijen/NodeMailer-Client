@@ -1,5 +1,6 @@
 const express = require('express');
 const mailer = require('nodemailer');
+const mjml = require('mjml');
 const { body, oneOf, validationResult } = require('express-validator/check');
 const emailSenderPayloadExample = require('./email-sender-payload-example');
 
@@ -17,7 +18,7 @@ router.post('/send', [
     body('smtp.pass', 'SMTP pass must be a string').isString(),
     body('message.from', 'Message from must be a string').isString(),
     body('message.subject', 'Message subject must be a string').isString(),
-    body('body', 'Body must be a string').isString(),
+    body('content', 'Content must be a string').isString(),
     oneOf([ // You need at least 1 receipient
         body('message.to', 'Include at least 1 receipient in to, cc or bcc').exists(),
         body('message.cc', 'Include at least 1 receipient in to, cc or bcc').exists(),
@@ -31,7 +32,15 @@ router.post('/send', [
             exampleRequest: emailSenderPayloadExample,
         });
     }
-    res.send('ok');
+
+    const smtp = req.body.smtp; // eslint-disable-line prefer-destructuring
+
+    const message = {
+        ...req.body.message,
+        html: req.body.type === 'mjml' ? mjml(req.body.content).html : req.body.content,
+    };
+
+    res.json([message, smtp]);
     return null;
 });
 

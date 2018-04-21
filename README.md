@@ -2,7 +2,7 @@
 
 Server- and client-side implementation of NodeMailer with MJML rendering included
 
-## Why?
+## Why
 
 As a front-end oriented developer I like to send my client good-looking emails for important announcements. Also, as a front-end oriented developer I rather make an IE6 compatible website than write HTML emails. For this reason I write emails in [MJML](https://mjml.io). Because I send these emails in small batches using an email provider is kinda overkill, but there are no easy ways to send HTML emails from Gmail. For this reason I decided to create a Node REST API to easily render and send emails using Nodemailer. When this is completely done and dusted I would like to add a basic interface that works together with the API to make it a bit more user friendly to use the service.
 
@@ -31,12 +31,13 @@ To send an email please use the following payload (json):
     },
     "message": { // Message fields, should include at least 1 of the following fields: to, cc and/or bcc
         "from": "from@example.com", // From email, you can also use `John Doe <john@doe.com>`
+        "replyto": "replyto@example.com", // Optional, reply-to email address.
         "to": "to@example.com", // To email address(es). See note below for more info
         "cc": "cc@example.com", // Cc email address(es). See note below for more info
         "bcc": "bcc@example.com", // Bcc email address(es). See note below for more info
         "subject": "Subject" // The email subject
     },
-    "body": "HTML or MJML, as you selected in the 'type' field" // HTML or MJML string
+    "content": "HTML or MJML, as you selected in the 'type' field" // HTML or MJML string
 }
 ```
 

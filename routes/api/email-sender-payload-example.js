@@ -1,5 +1,7 @@
+/* eslint-disable */
+
 const payload = {
-    type: 'mjml/html',
+    type: 'mjml',
     test: false,
     smtp: {
         port: 587,
@@ -22,7 +24,7 @@ const payload = {
         ],
         subject: 'Subject',
     },
-    body: "HTML or MJML, as you selected in the 'type' field",
+    body: "<mjml><mj-body><mj-text>Hello world</mj-text></mj-body></mjml>",
 };
 
 module.exports = payload;

@@ -23,13 +23,13 @@ To send an email please use the following payload (json):
     "type": "mjml/html", // Whether you are sending ready-to-go HTML or if you want MJML rendered first
     "test": true/false, // Wheter you are sending a test email (send the email to the reply-to address) or if you want to send it to the receipients
     "smtp": { // SMTP settings
-        "port": 587/465, // Optional, defaults to 587 is secure is false or 465 if true
+        "port": 587/465, // Usually 587 if secure, or 465 if true
         "host": "example.com", // Is the hostname or IP address to connect to
         "secure": true, // If true the connection will use TLS when connecting to server. If false (the default) then TLS is used if server supports the STARTTLS extension. In most cases set this value to true if you are connecting to port 465. For port 587 or 25 keep it false
         "user": "username", // SMTP username
         "pass": "password" // SMTP password
     },
-    "message": { // Message fields
+    "message": { // Message fields, should include at least 1 of the following fields: to, cc and/or bcc
         "from": "from@example.com", // From email, you can also use `John Doe <john@doe.com>`
         "to": "to@example.com", // To email address(es). See note below for more info
         "cc": "cc@example.com", // Cc email address(es). See note below for more info

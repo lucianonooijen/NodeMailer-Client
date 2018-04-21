@@ -26,8 +26,10 @@ To send an email please use the following payload (json):
         "port": 587/465, // Usually 587 if secure is false, or 465 if true
         "host": "example.com", // Is the hostname or IP address to connect to
         "secure": true, // If true the connection will use TLS when connecting to server. If false (the default) then TLS is used if server supports the STARTTLS extension. In most cases set this value to true if you are connecting to port 465. For port 587 or 25 keep it false
-        "user": "username", // SMTP username
-        "pass": "password" // SMTP password
+        "auth": { // Authorization object
+            "user": "username", // SMTP username
+            "pass": "password" // SMTP password
+        }
     },
     "message": { // Message fields, should include at least 1 of the following fields: to, cc and/or bcc
         "from": "from@example.com", // From email, you can also use `John Doe <john@doe.com>`

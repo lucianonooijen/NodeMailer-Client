@@ -7,8 +7,10 @@ const payload = {
         port: 587,
         host: 'example.com',
         secure: true,
-        user: 'username',
-        pass: 'password',
+        auth: {
+            user: 'username',
+            pass: 'password',
+        }
     },
     message: {
         from: '"John Doe" from@example.com',

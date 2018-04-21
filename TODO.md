@@ -1,7 +1,8 @@
 # TO DO
 
+* Make REST api for sending emails actually work
+* Test with [https://ethereal.email/](https://ethereal.email/)
 * Add badges from Coding Standards
-* Create REST API for sending emails
 * Add OAuth route
 * Create user interface for sending emails
 * Add CI/CD integration (CircleCI/Travis)

@@ -14,8 +14,8 @@ router.post('/send', [
     body('smtp.port', 'SMTP port must be a number').isNumeric(),
     body('smtp.host', 'SMTP host must be a string').isString(),
     body('smtp.secure', 'SMTP secure must be a boolean').isBoolean(),
-    body('smtp.user', 'SMTP user must be a string').isString(),
-    body('smtp.pass', 'SMTP pass must be a string').isString(),
+    body('smtp.auth.user', 'SMTP user must be a string').isString(),
+    body('smtp.auth.pass', 'SMTP pass must be a string').isString(),
     body('message.from', 'Message from must be a string').isString(),
     body('message.subject', 'Message subject must be a string').isString(),
     body('content', 'Content must be a string').isString(),
@@ -42,8 +42,6 @@ router.post('/send', [
         };
         const transporter = nodemailer.createTransport(smtp);
         transporter.sendMail(message, (err, info) => {
-            console.log(err);
-            console.log(info);
             if (err) {
                 return res.json({
                     success: false,

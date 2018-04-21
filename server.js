@@ -1,5 +1,5 @@
 const bodyParser = require('body-parser');
-const exphbs  = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const express = require('express');
 const hbs = require('hbs');
 const morgan = require('morgan');

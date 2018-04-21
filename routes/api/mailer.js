@@ -1,5 +1,5 @@
 const express = require('express');
-const mailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 const mjml = require('mjml');
 const { body, oneOf, validationResult } = require('express-validator/check');
 const emailSenderPayloadExample = require('./email-sender-payload-example');
@@ -33,14 +33,35 @@ router.post('/send', [
         });
     }
 
-    const smtp = req.body.smtp; // eslint-disable-line prefer-destructuring
-
-    const message = {
-        ...req.body.message,
-        html: req.body.type === 'mjml' ? mjml(req.body.content).html : req.body.content,
-    };
-
-    res.json([message, smtp]);
+    try {
+        const smtp = req.body.smtp; // eslint-disable-line prefer-destructuring
+        const message = {
+            ...req.body.message,
+            to: req.body.test ? req.body.message.from : req.body.message.to,
+            html: req.body.type === 'mjml' ? mjml(req.body.content).html : req.body.content,
+        };
+        const transporter = nodemailer.createTransport(smtp);
+        transporter.sendMail(message, (err, info) => {
+            console.log(err);
+            console.log(info);
+            if (err) {
+                return res.json({
+                    success: false,
+                    err,
+                    info,
+                });
+            }
+            return res.json({
+                success: true,
+                message,
+            });
+        });
+    } catch (err) {
+        res.json({
+            success: false,
+            error: err,
+        });
+    }
     return null;
 });
 

@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/render', (req, res) => {
     console.log(req.body);
     if (!req.body.mjml) {
-        res.status(404);
+        res.status(400);
         res.send('MJML in post body not found');
     } else {
         try {
